@@ -1,0 +1,12 @@
+class Solution {
+    public int sum=0;
+    public TreeNode bstToGst(TreeNode root) {
+         if(root!=null){
+			bstToGst(root.left);
+			sum+=root.val;
+			root.val=sum;
+			bstToGst(root.right);
+		}
+		return root;
+    }
+}
